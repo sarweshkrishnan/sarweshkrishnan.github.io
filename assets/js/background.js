@@ -282,30 +282,6 @@ p.mouseMoved = function(){
     mx = p.mouseX;
     my = p.mouseY;
     }
-
-p.mousePressed = function() {
-    var d = new Date().getTime() - startedAt.getTime();
-/*    events.push(d);
-    console.log(events); */
-    if(focusedParticleIndex != null) {
-        pixels[focusedParticleIndex].flightMode = 0;
-        pixels[focusedParticleIndex].toSize = Math.random()*10+1;
-    }
-    for(var i = 0; i<numParticles; i++ ) {
-        if(pixels[i].flightMode == 1) {
-        pixels[i].flightMode = 2;
-
-        pixels[i].toSize = 100;
-        pixels[i].toX = Math.random()*width;
-        pixels[i].toY = Math.random()*height;
-
-        focusedParticleIndex = i;
-
-        // abort for loop
-        i = numParticles;
-        }
-    }
-}
     
 p.draw=function(){
     if(window.cps_pause == false) {
